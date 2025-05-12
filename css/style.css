@@ -106,6 +106,13 @@
             box-shadow: none;
         }
 
+        [data-theme="dark"] .navbar-toggler-icon {
+            filter: invert(1);
+        }
+        [data-theme="dark"] .text-reset {
+            filter: invert(1);
+        }
+
         [data-theme="dark"] .navbar {
             background-color: rgba(18, 18, 18, 0.8);
         }
@@ -137,6 +144,9 @@
         }
 
         [data-theme="dark"] .nav-link.active {
+            color: var(--text-color);
+        }
+        [data-theme="dark"] .nav-link:hover {
             color: var(--text-color);
         }
 
@@ -188,7 +198,6 @@
             font-weight: 600;
             border-radius: 50px;
             transition: all 0.3s;
-            margin-left: 15px;
             box-shadow: 0 5px 15px rgba(108, 99, 255, 0.4);
         }
 
@@ -197,6 +206,14 @@
             box-shadow: 0 10px 25px rgba(108, 99, 255, 0.6);
             color: white;
             background: var(--secondary-color);
+        }
+
+        .btn:hover{
+            border: none;
+        }
+        .btn-outline-primary:focus{
+           background: var(--primary-color) !important;
+           color: white;
         }
 
         /* Hero Section */
@@ -946,7 +963,7 @@
 
         .left {
             left: 0;
-            text-align: right;
+            /* text-align: right; */
         }
 
         .left::after {
@@ -1032,7 +1049,7 @@
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             border-radius: 15px;
-            padding: 40px;
+            /* padding: 40px; */
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
         }
 
@@ -1223,6 +1240,7 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             font-size: 1.2rem;
             text-decoration: none;
+            cursor: pointer;
         }
 
         .social-contact-fixed a:hover {
@@ -1313,17 +1331,17 @@
             }
 
             .timeline::after {
-                left: 31px;
+                left: 10px;
             }
 
             .timeline-item {
                 width: 100%;
-                padding-left: 70px;
-                padding-right: 25px;
+                padding-left: 25px;
+                padding-right: 5px;
             }
 
             .timeline-item::after {
-                left: 21px;
+                left: 0px;
             }
 
             .left,

@@ -188,25 +188,22 @@
         });
 
         // Time-based WhatsApp greeting
+       function getGreeting() {
         const hour = new Date().getHours();
-        let greeting;
+        if (hour >= 5 && hour < 12) return "Good Morning";
+        if (hour >= 12 && hour < 17) return "Good Afternoon";
+        if (hour >= 17 && hour < 21) return "Good Evening";
+        return "Good Night";
+    }
 
-        if (hour >= 5 && hour < 12) {
-            greeting = "Good Morning";
-        } else if (hour >= 12 && hour < 17) {
-            greeting = "Good Afternoon";
-        } else {
-            greeting = "Good Night";
-        }
+    const greeting = getGreeting();
+    const message = encodeURIComponent(`Hi Raj Kumar, ${greeting}`);
+    const phoneNumber = "916369455827";
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
 
-        const message = `Hi Raj, ${greeting}!`;
-        const encodedMessage = encodeURIComponent(message);
-        const phoneNumber = "916369455827";
-        const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-
-        document.querySelectorAll('a[href*="whatsapp"]').forEach(link => {
-            link.setAttribute('href', whatsappLink);
-        });
+    // Set both links
+    document.getElementById("whatsappLink1").setAttribute("href", whatsappURL);
+    document.getElementById("whatsappLink2").setAttribute("href", whatsappURL);
 
         // Initialize tooltips
         const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
