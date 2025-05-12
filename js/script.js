@@ -257,3 +257,5 @@
     // Reset the form
     this.reset();
 });
+
+document.getElementById('currentYear').textContent = new Date().getFullYear();
